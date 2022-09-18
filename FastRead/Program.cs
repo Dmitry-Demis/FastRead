@@ -14,7 +14,7 @@ namespace FastRead
         }
         private static void ParallelCheck()
         {
-            var path = @"../../";
+            var path = @"../../../";
             var separators = new[] { ',', '.', ' ', ';', ':', '?', '!', '(', ')', '*', '"', '[', ']' };
             var result = new ConcurrentDictionary<string, uint>(StringComparer.InvariantCultureIgnoreCase);
 
@@ -48,7 +48,7 @@ namespace FastRead
         }
         private static void SequentialCheck()
         {
-            var path = @"../../";
+            var path = @"../../../";
             var separators = new[] { ',', '.', ' ', ';', ':', '?', '!', '(', ')', '*', '"', '[', ']' };
             var sq = new Dictionary<string, uint>(StringComparer.InvariantCultureIgnoreCase);
             using (StreamReader sr = new(path + @"\test.txt"))
