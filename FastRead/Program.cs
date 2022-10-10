@@ -7,18 +7,18 @@ namespace FastRead
 {
     internal class Program
     {
-        static void Main(string[] args)
+        //static void Main(string[] args)
+        //{
+        //    Console.OutputEncoding = System.Text.Encoding.UTF8;
+        //    ParallelCheck();
+        //}
+        private static Dictionary<string, uint> ParallelCheck(string path)
         {
-            Console.OutputEncoding = System.Text.Encoding.UTF8;
-            ParallelCheck();
-        }
-        private static void ParallelCheck()
-        {
-            var path = @"../../../";
+            //var path = @"../../../";
             var separators = new[] { ',', '.', ' ', ';', ':', '?', '!', '(', ')', '*', '"', '[', ']' };
             var result = new ConcurrentDictionary<string, uint>(StringComparer.InvariantCultureIgnoreCase);
 
-            File.ReadLines(path + @"\test.txt")
+            File.ReadLines(path)
                 .AsParallel()
                 .ForAll(line =>
                 {
@@ -35,18 +35,19 @@ namespace FastRead
             var res = result
                 .OrderByDescending(u => u.Value)
                 .ToDictionary(d => d.Key, d => d.Value);
-            var resultFile = path + @"\parallel_result.txt";
-            if (File.Exists(resultFile))
-                File.Delete(resultFile);
-            else
-                File.Create(resultFile).Close();
+            //var resultFile = path + @"\parallel_result.txt";
+            //if (File.Exists(resultFile))
+            //    File.Delete(resultFile);
+            //else
+            //    File.Create(resultFile).Close();
 
-            using (StreamWriter sw = new StreamWriter(resultFile))
-            {
-                foreach (var pair in res) sw.WriteLine(pair);
-            }
+            //using (StreamWriter sw = new StreamWriter(resultFile))
+            //{
+            //    foreach (var pair in res) sw.WriteLine(pair);
+            //}
+            return res;
         }
-        private static void SequentialCheck()
+        /*private static void SequentialCheck()
         {
             var path = @"../../../";
             var separators = new[] { ',', '.', ' ', ';', ':', '?', '!', '(', ')', '*', '"', '[', ']' };
@@ -78,6 +79,6 @@ namespace FastRead
             {
                 foreach (var pair in sq.OrderByDescending(u => u.Value)) sw.WriteLine(pair);
             }
-        }
+        }*/
     }
 }
