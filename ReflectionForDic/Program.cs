@@ -34,6 +34,7 @@ namespace ReflectionForDic
                 using (StreamWriter sw = new StreamWriter(resultFile))
                     foreach (var pair in result)
                         sw.WriteLine(pair);
+                Console.WriteLine("Program has completed successfully");
             }
         }
     }
