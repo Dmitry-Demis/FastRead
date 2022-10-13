@@ -47,12 +47,12 @@ namespace FastRead
             //}
             return res;
         }
-        /*private static void SequentialCheck()
+        private static Dictionary<string, uint> SequentialCheck(string path)
         {
-            var path = @"../../../";
+           // var path = @"../../../";
             var separators = new[] { ',', '.', ' ', ';', ':', '?', '!', '(', ')', '*', '"', '[', ']' };
             var sq = new Dictionary<string, uint>(StringComparer.InvariantCultureIgnoreCase);
-            using (StreamReader sr = new(path + @"\test.txt"))
+            using (StreamReader sr = new(path))
             {
                 string? line = "";
                 while ((line = sr.ReadLine()) != null)
@@ -65,20 +65,16 @@ namespace FastRead
                     foreach (var word in line.Split(separators, StringSplitOptions.RemoveEmptyEntries))
                     {
                         if (!sq.ContainsKey(word))
-                        {
                             sq.Add(word, 1);
-                        }
                         else
-                        {
                             sq[word]++;
-                        }
                     }
                 }
             }
-            using (StreamWriter sw = new StreamWriter(path + @"\sequential_result.txt"))
-            {
-                foreach (var pair in sq.OrderByDescending(u => u.Value)) sw.WriteLine(pair);
-            }
-        }*/
+            var res = sq
+                .OrderByDescending(u => u.Value)
+                .ToDictionary(d => d.Key, d => d.Value);
+            return res;
+        }
     }
 }
