@@ -59,7 +59,7 @@ namespace ReflectionForDic
                 Console.WriteLine("Program has completed successfully");
                 Console.WriteLine($"Elapsed time for parallel: {time.ElapsedMilliseconds} ms");
                 Console.WriteLine($"Elapsed time for sequential: {time_sq.ElapsedMilliseconds} ms");
-                Console.WriteLine($"Acceration: {(time_sq.ElapsedMilliseconds * 1.0 / time.ElapsedMilliseconds):F4} ms");
+                Console.WriteLine($"Acceleration: {(time_sq.ElapsedMilliseconds * 1.0 / time.ElapsedMilliseconds):F4} ms");
                 time.Reset();
                 time_sq.Reset();
             }
