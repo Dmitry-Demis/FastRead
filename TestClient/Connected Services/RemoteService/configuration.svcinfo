@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configurationSnapshot xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:schemas-microsoft-com:xml-wcfconfigurationsnapshot">
+  <behaviors />
+  <bindings>
+    <binding digest="System.ServiceModel.Configuration.WSHttpBindingElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089:&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data messageEncoding=&quot;Mtom&quot; name=&quot;WSHttpBinding_ISendData&quot; /&gt;" bindingType="wsHttpBinding" name="WSHttpBinding_ISendData" />
+  </bindings>
+  <endpoints>
+    <endpoint normalizedDigest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;http://win-5qk3d0f056a/SampleService/SendData.svc/SampleService&quot; binding=&quot;wsHttpBinding&quot; bindingConfiguration=&quot;WSHttpBinding_ISendData&quot; contract=&quot;RemoteService.ISendData&quot; name=&quot;WSHttpBinding_ISendData&quot;&gt;&lt;identity&gt;&lt;servicePrincipalName value=&quot;host/WIN-5QK3D0F056A&quot; /&gt;&lt;/identity&gt;&lt;/Data&gt;" digest="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-16&quot;?&gt;&lt;Data address=&quot;http://win-5qk3d0f056a/SampleService/SendData.svc/SampleService&quot; binding=&quot;wsHttpBinding&quot; bindingConfiguration=&quot;WSHttpBinding_ISendData&quot; contract=&quot;RemoteService.ISendData&quot; name=&quot;WSHttpBinding_ISendData&quot;&gt;&lt;identity&gt;&lt;servicePrincipalName value=&quot;host/WIN-5QK3D0F056A&quot; /&gt;&lt;/identity&gt;&lt;/Data&gt;" contractName="RemoteService.ISendData" name="WSHttpBinding_ISendData" />
+  </endpoints>
+</configurationSnapshot>
